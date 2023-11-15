@@ -1,21 +1,21 @@
-class UpcomingMovies {
-  List<MovieEntity> results;
+import 'package:json_annotation/json_annotation.dart';
 
+part 'movie_entity.g.dart';
+
+@JsonSerializable()
+class UpcomingMovies {
   UpcomingMovies({
     required this.results,
   });
+
+  List<MovieEntity> results;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class MovieEntity {
-  String id;
-  String resultId;
-  PrimaryImage? primaryImage;
-  TitleType titleType;
-  TitleText titleText;
-  TitleText originalTitleText;
-  ReleaseYear releaseYear;
-  ReleaseDate releaseDate;
-
   MovieEntity({
     required this.id,
     required this.resultId,
@@ -26,23 +26,33 @@ class MovieEntity {
     required this.releaseYear,
     required this.releaseDate,
   });
+  String id;
+  String resultId;
+  PrimaryImage? primaryImage;
+  TitleType titleType;
+  TitleText titleText;
+  TitleText originalTitleText;
+  ReleaseYear releaseYear;
+  ReleaseDate releaseDate;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class TitleText {
-  String text;
-
   TitleText({
     required this.text,
   });
+
+  String text;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class PrimaryImage {
-  String id;
-  int width;
-  int height;
-  String url;
-  Caption caption;
-
   PrimaryImage({
     required this.id,
     required this.width,
@@ -50,66 +60,85 @@ class PrimaryImage {
     required this.url,
     required this.caption,
   });
+
+  String id;
+  int width;
+  int height;
+  String url;
+  Caption caption;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class Caption {
-  String plainText;
-
   Caption({
     required this.plainText,
   });
+
+  String plainText;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class ReleaseDate {
-  int day;
-  int month;
-  int year;
-
   ReleaseDate({
     required this.day,
     required this.month,
     required this.year,
   });
+
+  int day;
+  int month;
+  int year;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class ReleaseYear {
-  int year;
-  dynamic endYear;
-
   ReleaseYear({
     required this.year,
     required this.endYear,
   });
+
+  int year;
+  dynamic endYear;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class TitleType {
-  DisplayableProperty displayableProperty;
-  bool isSeries;
-  bool isEpisode;
-  List<Category> categories;
-  bool canHaveEpisodes;
-
   TitleType({
-    required this.displayableProperty,
     required this.isSeries,
     required this.isEpisode,
     required this.categories,
     required this.canHaveEpisodes,
   });
+
+  bool isSeries;
+  bool isEpisode;
+  List<Category> categories;
+  bool canHaveEpisodes;
+
+  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
+      _$UpcomingMoviesFromJson(json);
 }
 
+@JsonSerializable()
 class Category {
-  String value;
-
   Category({
     required this.value,
   });
-}
 
-class DisplayableProperty {
-  Caption value;
+  String value;
 
-  DisplayableProperty({
-    required this.value,
-  });
+  factory Category.fromJson(Map<String, dynamic> json) =>
+      _$CategoryFromJson(json);
 }
