@@ -73,18 +73,21 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
 }
 
 /// @nodoc
-abstract class _$$_MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
-  factory _$$_MovieCopyWith(_$_Movie value, $Res Function(_$_Movie) then) =
-      __$$_MovieCopyWithImpl<$Res>;
+abstract class _$$MovieImplCopyWith<$Res> implements $MovieCopyWith<$Res> {
+  factory _$$MovieImplCopyWith(
+          _$MovieImpl value, $Res Function(_$MovieImpl) then) =
+      __$$MovieImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String title, String? imageUrl, DateTime releaseDate});
 }
 
 /// @nodoc
-class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
-    implements _$$_MovieCopyWith<$Res> {
-  __$$_MovieCopyWithImpl(_$_Movie _value, $Res Function(_$_Movie) _then)
+class __$$MovieImplCopyWithImpl<$Res>
+    extends _$MovieCopyWithImpl<$Res, _$MovieImpl>
+    implements _$$MovieImplCopyWith<$Res> {
+  __$$MovieImplCopyWithImpl(
+      _$MovieImpl _value, $Res Function(_$MovieImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +98,7 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
     Object? imageUrl = freezed,
     Object? releaseDate = null,
   }) {
-    return _then(_$_Movie(
+    return _then(_$MovieImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -118,8 +121,8 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
 
 /// @nodoc
 
-class _$_Movie implements _Movie {
-  const _$_Movie(
+class _$MovieImpl implements _Movie {
+  const _$MovieImpl(
       {required this.id,
       required this.title,
       this.imageUrl,
@@ -143,7 +146,7 @@ class _$_Movie implements _Movie {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Movie &&
+            other is _$MovieImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.imageUrl, imageUrl) ||
@@ -159,8 +162,8 @@ class _$_Movie implements _Movie {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MovieCopyWith<_$_Movie> get copyWith =>
-      __$$_MovieCopyWithImpl<_$_Movie>(this, _$identity);
+  _$$MovieImplCopyWith<_$MovieImpl> get copyWith =>
+      __$$MovieImplCopyWithImpl<_$MovieImpl>(this, _$identity);
 }
 
 abstract class _Movie implements Movie {
@@ -168,7 +171,7 @@ abstract class _Movie implements Movie {
       {required final String id,
       required final String title,
       final String? imageUrl,
-      required final DateTime releaseDate}) = _$_Movie;
+      required final DateTime releaseDate}) = _$MovieImpl;
 
   @override
   String get id;
@@ -180,6 +183,6 @@ abstract class _Movie implements Movie {
   DateTime get releaseDate;
   @override
   @JsonKey(ignore: true)
-  _$$_MovieCopyWith<_$_Movie> get copyWith =>
+  _$$MovieImplCopyWith<_$MovieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

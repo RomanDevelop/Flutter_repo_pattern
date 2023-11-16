@@ -35,8 +35,8 @@ class MovieEntity {
   ReleaseYear releaseYear;
   ReleaseDate releaseDate;
 
-  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
-      _$UpcomingMoviesFromJson(json);
+  factory MovieEntity.fromJson(Map<String, dynamic> json) =>
+      _$MovieEntityFromJson(json);
 }
 
 @JsonSerializable()
@@ -47,8 +47,8 @@ class TitleText {
 
   String text;
 
-  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
-      _$UpcomingMoviesFromJson(json);
+  factory TitleText.fromJson(Map<String, dynamic> json) =>
+      _$TitleTextFromJson(json);
 }
 
 @JsonSerializable()
@@ -67,8 +67,8 @@ class PrimaryImage {
   String url;
   Caption caption;
 
-  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
-      _$UpcomingMoviesFromJson(json);
+  factory PrimaryImage.fromJson(Map<String, dynamic> json) =>
+      _$PrimaryImageFromJson(json);
 }
 
 @JsonSerializable()
@@ -79,8 +79,8 @@ class Caption {
 
   String plainText;
 
-  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
-      _$UpcomingMoviesFromJson(json);
+  factory Caption.fromJson(Map<String, dynamic> json) =>
+      _$CaptionFromJson(json);
 }
 
 @JsonSerializable()
@@ -95,8 +95,8 @@ class ReleaseDate {
   int month;
   int year;
 
-  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
-      _$UpcomingMoviesFromJson(json);
+  factory ReleaseDate.fromJson(Map<String, dynamic> json) =>
+      _$ReleaseDateFromJson(json);
 }
 
 @JsonSerializable()
@@ -109,8 +109,8 @@ class ReleaseYear {
   int year;
   dynamic endYear;
 
-  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
-      _$UpcomingMoviesFromJson(json);
+  factory ReleaseYear.fromJson(Map<String, dynamic> json) =>
+      _$ReleaseYearFromJson(json);
 }
 
 @JsonSerializable()
@@ -127,8 +127,8 @@ class TitleType {
   List<Category> categories;
   bool canHaveEpisodes;
 
-  factory UpcomingMovies.fromJson(Map<String, dynamic> json) =>
-      _$UpcomingMoviesFromJson(json);
+  factory TitleType.fromJson(Map<String, dynamic> json) =>
+      _$TitleTypeFromJson(json);
 }
 
 @JsonSerializable()
