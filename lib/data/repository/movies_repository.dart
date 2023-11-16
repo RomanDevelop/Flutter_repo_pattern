@@ -10,6 +10,10 @@ class MoviesRepository {
 
   Future<List<Movie>> getUpcomingMovies({
     required int limit,
-  })
-
+    required int page,
+  }) async {
+    final upcomingMovies =
+        await apiClient.getUpcomingMovies(page: page, limit: limit);
+    return networkMapper.toMovies(upcomingMovies.results);
+  }
 }
