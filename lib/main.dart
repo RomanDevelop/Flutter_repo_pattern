@@ -38,7 +38,7 @@ Future<InitialData> _createData() async {
 
   // Data
   final apiClient = ApiClient(
-    baseUrl: 'https://moviesdatabase.g.rapidapi.com/',
+    baseUrl: 'https://moviesdatabase.p.rapidapi.com/',
     apiKey: config.apiKey,
     apiHost: config.apiHost,
   );

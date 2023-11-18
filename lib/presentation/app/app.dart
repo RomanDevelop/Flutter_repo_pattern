@@ -12,7 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: data.providers,
-      child: const MaterialApp(
+      child: MaterialApp(
         title: 'Movie App',
         home: MoviesListScreen(),
       ),
