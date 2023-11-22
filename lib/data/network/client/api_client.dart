@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_repopattern/data/network/entity/movie_entity.dart';
+
 import 'package:flutter_repopattern/domain/exception/network_exception.dart';
 
 class ApiClient {

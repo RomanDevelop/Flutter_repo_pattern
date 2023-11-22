@@ -30,7 +30,7 @@ Future<InitialData> _createData() async {
   // Util
   final log = Logger(
     printer: PrettyPrinter(),
-    level: kDebugMode ? Level.verbose : Level.nothing,
+    level: kDebugMode ? Level.trace : Level.off,
   );
 
   // Load project configuration
@@ -43,7 +43,7 @@ Future<InitialData> _createData() async {
     apiHost: config.apiHost,
   );
   final networkMapper = NetworkMapper(log: log);
-  final movieRepo = MoviesRepository(
+  final moviesRepo = MoviesRepository(
     apiClient: apiClient,
     networkMapper: networkMapper,
   );
@@ -52,7 +52,7 @@ Future<InitialData> _createData() async {
   return InitialData(
     providers: [
       Provider<Logger>.value(value: log),
-      Provider<MoviesRepository>.value(value: movieRepo),
+      Provider<MoviesRepository>.value(value: moviesRepo),
     ],
   );
 }
@@ -63,7 +63,7 @@ Future<Config> _loadConfig(Logger log) async {
   try {
     raw = await rootBundle.loadString('assets/config/config.json');
 
-    final config = jsonDecode(raw) as Map<String, dynamic>;
+    final config = json.decode(raw) as Map<String, dynamic>;
 
     return Config(
         apiKey: config['apiKey'] as String,

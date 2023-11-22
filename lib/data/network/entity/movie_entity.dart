@@ -18,20 +18,16 @@ class UpcomingMovies {
 class MovieEntity {
   MovieEntity({
     required this.id,
-    required this.resultId,
     required this.primaryImage,
     required this.titleType,
     required this.titleText,
-    required this.originalTitleText,
     required this.releaseYear,
     required this.releaseDate,
   });
   String id;
-  String resultId;
   PrimaryImage? primaryImage;
   TitleType titleType;
   TitleText titleText;
-  TitleText originalTitleText;
   ReleaseYear releaseYear;
   ReleaseDate releaseDate;
 
@@ -116,16 +112,20 @@ class ReleaseYear {
 @JsonSerializable()
 class TitleType {
   TitleType({
+    required this.text,
+    required this.id,
     required this.isSeries,
     required this.isEpisode,
-    required this.categories,
-    required this.canHaveEpisodes,
+    this.categories,
+    this.canHaveEpisodes,
   });
 
+  String text;
+  String id;
   bool isSeries;
   bool isEpisode;
-  List<Category> categories;
-  bool canHaveEpisodes;
+  List<Category>? categories;
+  bool? canHaveEpisodes;
 
   factory TitleType.fromJson(Map<String, dynamic> json) =>
       _$TitleTypeFromJson(json);
